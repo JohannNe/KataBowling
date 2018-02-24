@@ -29,6 +29,7 @@ public class BowlingScore {
 			iScore += iPins;
 			
 			if(iFrameIndex<9){ //No extra points for strikes or spares in the last frame
+				
 				if(iPins==10){ //Player hits strike
 					iScore+= sequence.get(i+1) + sequence.get(i+2);
 					bStrike = true;
@@ -38,7 +39,7 @@ public class BowlingScore {
 						iScore+= sequence.get(i+1);
 					}
 				}
-				else{
+				else{ //Player did not hit strike on first try
 					iPinsFirstTry = iPins;
 				}
 				
@@ -55,9 +56,7 @@ public class BowlingScore {
 			
 			
 		}
-		
-		
-		
+
 		return iScore;
 	}
 }
